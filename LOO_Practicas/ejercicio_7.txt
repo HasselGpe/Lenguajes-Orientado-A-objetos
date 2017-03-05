@@ -1,0 +1,42 @@
+package ejecicio7;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Iterator;
+
+public class Ejecicio7 {
+   public String _alumno;
+   
+    public static void main(String[] args) {
+      List<String> _lista = new ArrayList<String>();
+      boolean opc = true;
+       System.out.println("Nombre del alumno: ");
+          Scanner _alumno = new Scanner(System.in);
+          String res = _alumno.nextLine();
+      while (opc)
+      {
+         System.out.println("¿Quieres agregar un nombre?: ");
+         Scanner sc = new Scanner(System.in);
+         String res1 = sc.nextLine();
+          if ("si".equals(res1))
+          {
+             System.out.println("¿Qué nombre deseas agregar?: ");
+             Scanner sc1 = new Scanner (System.in);
+             String r1 = sc1.nextLine();
+             _lista.add(r1);
+              Iterator <String> i = _lista.iterator();
+                while (i.hasNext())
+                {
+                    System.out.println(i.next());
+                }
+          }
+          else
+          {
+              
+              opc = false;
+          }
+      }
+     
+    }
+    
+}

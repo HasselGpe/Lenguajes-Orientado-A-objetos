@@ -1,0 +1,39 @@
+package practica6;
+import static java.lang.System.*;
+public class Practica6 {
+    public static void main(String[] args) {
+        Tablas TablaUno = new Tablas(12,4);
+        Tablas TablaDos = new Tablas(35,6);
+        Tablas TablaTres = new Tablas(101,13);
+        Tablas TablaCuatro = new Tablas(6,5);
+        TablaUno.GenerarTabla();
+        TablaDos.GenerarTabla();
+        TablaTres.GenerarTabla();
+        TablaCuatro.GenerarTabla();
+    }
+}
+class Tablas
+{
+    public int _tabla, _cant;
+    public Tablas(int t, int c)
+    {
+            this._tabla = t;
+            this._cant = c;
+    }
+    public void GenerarTabla()
+    {
+        for(int contador = 1;contador <=_cant;contador++)
+        {
+            if(contador >= _cant)
+            {
+                out.println(_tabla +" x "+contador+" = "+(_tabla*contador));
+                out.println("- - - - - - - - - - - - - - ");
+            }
+            else
+            {
+            out.println(_tabla +" x "+contador+" = "+(_tabla*contador));
+            }
+        }
+            
+    }
+}

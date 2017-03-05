@@ -1,0 +1,34 @@
+package practica2;
+import static java.lang.System.*;
+public class Practica2 {
+    public static String _marca, _modelo;
+    public static int _precio;
+    public static boolean _vendido = false;
+    public static void main(String[] args)   
+    {
+        _marca = "Isaac Amisadai Calixto Espinosa";
+        _modelo = "13643585";
+        _precio = 3000;
+        CalcularIVA(16);
+        RealizarVenta();
+    }
+    public static void CalcularIVA(int IVA)
+        {
+            _precio = _precio + (_precio * IVA);
+            out.println("Marca: " + _marca);
+            out.println("Modelo: " + _modelo);
+            out.println("Precio: " + _precio);
+        }
+        public static void RealizarVenta()
+        {
+            _vendido = true;
+            if(_vendido == true)
+            {
+                out.println("Status: Vendido");
+            }
+            else
+            {
+                out.println("Status: Sin vender");
+            }
+        }
+}

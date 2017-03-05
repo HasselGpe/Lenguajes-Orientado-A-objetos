@@ -1,0 +1,125 @@
+package practica9;
+import java.util.ArrayList;
+import java.util.List;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Iterator;
+public class Practica9 {
+    public static boolean _Continuar = true;
+    public static boolean _agregar = true;
+    public static int _contador;
+    public static void main(String[] args) throws IOException  {
+        List<Integer>  Mayores= new ArrayList<Integer>();
+        List<Float> Promedios = new ArrayList<Float>();
+                while(_Continuar)
+                {
+                    InputStreamReader EntradaRespuesta = new InputStreamReader(System.in);
+                    BufferedReader Respuesta = new BufferedReader(EntradaRespuesta);
+                    System.out.println("Desea realizar una operacion? [S o N]");
+                    String res = Respuesta.readLine();
+                    if("S".equals(res)||"s".equals(res))
+                    {
+                        _agregar = true;
+                        System.out.println("Promedio [P] o Mayor [M]");
+                        System.out.println("Que operacion desea realizar? ");
+                        String opc = Respuesta.readLine();
+                            if("P".equals(opc) || "p".equals(opc))
+                            {
+                                while(_agregar)
+                                {
+                                    System.out.println("Agregar numero? ");
+                                    String agregar = Respuesta.readLine();
+                                    if("S".equals(agregar) || "s".equals(agregar))
+                                    {
+                                        System.out.print("Introduce tu número: ");
+                                        String numero = Respuesta.readLine();
+                                        Promedios.add(Float.parseFloat(numero));
+                                    }
+                                    else if("N".equals(agregar) || "n".equals(agregar))
+                                    {
+                                        Calculos Operaciones = new Calculos();
+                                        double resultante = Operaciones.Promedio(Promedios);
+                                        System.out.println("Promedio es:" + resultante);
+                                        _agregar = false;
+                                    }
+                                    else
+                                    {
+                                        System.out.println("Respuesta NO valida!");
+                                    }
+                                }
+                            }
+                            else if("M".equals(opc) || "m".equals(opc))
+                            {
+                                while(_agregar)
+                                {
+                                    System.out.println("Agregar numero? ");
+                                    String agregar = Respuesta.readLine();
+                                    if("S".equals(agregar) || "s".equals(agregar))
+                                    {
+                                        System.out.print("Introduce tu número: ");
+                                        String numero = Respuesta.readLine();
+                                        Mayores.add(Integer.parseInt(numero));
+                                    }
+                                    else if("N".equals(agregar) || "n".equals(agregar))
+                                    {
+                                        Calculos Operaciones = new Calculos();
+                                        int resultante = Operaciones.Mayor(Mayores);
+                                        System.out.println("Mayor es: " + resultante);
+                                        _agregar = false;
+                                    }
+                                    else
+                                    {
+                                        System.out.println("Respuesta NO valida!");
+                                    }
+                                }
+                            }
+                        }
+                    else if ("N".equals(res)||"n".equals(res))
+                    {
+                        _Continuar = false;
+                    }
+                    else
+                        {System.out.println("Respuesta Invalida!");}
+                }
+            }
+        }
+interface Operaciones
+{
+    public double Promedio(List<Float> Promedio);
+    public int Mayor(List<Integer> Mayores);
+}
+class Calculos implements Operaciones
+{
+    public static int _grande;
+    public static float _sumatoria;
+    public static int _incremento =1;
+    @Override
+    public double Promedio(List<Float> Promedios) {
+        Iterator<Float> i = Promedios.iterator();
+        while(i.hasNext())
+        {   
+            float elemento = i.next();
+            _sumatoria = _sumatoria + elemento;
+            _incremento=+1;
+        }
+        int tamano = Promedios.size();
+        double resultado = _sumatoria / tamano;
+        return resultado;
+    }
+
+    @Override
+    public int Mayor(List<Integer> Mayores) {
+        Iterator<Integer> i = Mayores.iterator();
+         _grande = 0;
+        while(i.hasNext())
+        {   
+            int elemento = i.next();
+            if(elemento>_grande)
+            {
+                _grande= elemento;
+            }
+        }
+        return _grande;
+    }
+}

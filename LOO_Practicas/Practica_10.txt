@@ -1,0 +1,40 @@
+package practica10;
+import java.util.Scanner;
+public class Practica10 {
+public static boolean _agregar = true;
+    public static void main(String[] args) {
+Scanner leer = new Scanner(System.in);
+        do
+        {
+            try
+            {
+                System.out.print("Dame el numero del mes: ");
+                int numes = leer.nextInt();
+                Meses mes = new Meses();
+                String b = mes.Convertir(numes);
+                System.out.println("El mes es: " + b);
+            }
+            catch(Exception e)
+                    {
+                        System.out.println("No es valido!");                    
+                    }
+        }
+        while(_agregar);
+    }
+    
+}
+class Meses
+    {
+        public String Convertir(int m)
+        {
+            String[] mes = { "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre" };
+            if (m <= 12)
+            {
+                return mes[m - 1];
+            }
+            else
+            {
+                return "No existe";
+            }
+        }
+    }

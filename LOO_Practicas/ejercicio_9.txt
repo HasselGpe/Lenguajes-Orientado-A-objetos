@@ -1,0 +1,73 @@
+package ejercicio9;
+    interface operaciones{
+        float suma(int a, int b);
+        float resta(int a, int b);
+        float multiplicacion(int a, int b);
+        float division(int a, int b);
+    }
+
+    public class Calculos implements operaciones{
+        public float suma(int a, int b){
+            return a + b;    
+        }
+        
+        public float resta(int a, int b){
+            return a - b;    
+        }
+        
+        public float multiplicacion(int a, int b){
+            return a * b;    
+        }
+        
+        public float division(int a, int b){
+            return a / b;    
+        }
+}
+
+
+
+package ejercicio9;
+
+import java.util.Scanner;
+
+public class Ejercicio9 {
+
+    public static void main(String[] args) {
+        Scanner ent = new Scanner(System.in);
+        Calculos c = new Calculos();
+        int a, b;
+        System.out.print("1. Suma\n2.Resta\n3.Multiplicacion\n4.Division\n Teclea el numero de la opcion que deseas realizar: ");
+        int opcion = ent.nextInt();
+        switch(opcion){
+            case 1:
+                System.out.println("\nTeclea un numero");
+                a = ent.nextInt();
+                System.out.println("\nTeclea otro numero");
+                b = ent.nextInt();
+                System.out.println("\nResultado de la suma: " + c.suma(a, b));
+                break;
+            case 2:
+                System.out.println("\nTeclea un numero");
+                a = ent.nextInt();
+                System.out.println("\nTeclea cantidad a restar");
+                b = ent.nextInt();
+                System.out.println("\nResultado de la resta: " + c.resta(a, b));
+                break;
+            case 3:
+                System.out.println("\nTeclea un numero");
+                a = ent.nextInt();
+                System.out.println("\nTeclea otro numero");
+                b= ent.nextInt();
+                System.out.println("\nResultado de la multiplicacion: " + c.multiplicacion(a, b));
+                break;
+            case 4:
+                System.out.println("\nTeclea un numero");
+                a = ent.nextInt();
+                System.out.println("\nTeclea otro numero");
+                b = ent.nextInt();
+                System.out.println("\nResultado de la division: " + c.division(a, b));
+                break;
+        }
+        
+    }    
+} 

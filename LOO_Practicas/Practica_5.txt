@@ -1,0 +1,86 @@
+package practica5;
+import static java.lang.System.*;
+public class Practica5 {
+    public static void main(String[] args) {
+       Beca AlumnoUno = new Beca(7.3f,1);
+       String A1 = AlumnoUno.Calcular();
+       out.println(A1);
+       Beca AlumnoDos = new Beca(8.9f,3);
+       String A2 = AlumnoDos.Calcular();
+       out.println(A2);
+       Beca AlumnoTres = new Beca(8.2f,9);
+       String A3 = AlumnoTres.Calcular();
+       out.println(A3);
+       Beca AlumnoCuatro = new Beca(6.8f,10);
+       String A4 = AlumnoCuatro.Calcular();
+       out.println(A4);
+    }
+}
+
+class Beca
+{
+    public static float _prom;
+    public static int _cuatri;
+    public static String _beca;
+    public Beca(float promedio, int cuatrimestre)
+    {
+        _prom = promedio;
+        _cuatri = cuatrimestre;
+    }
+    public String Calcular()
+    {
+        switch(_cuatri)
+        {
+            case 1:
+                _beca = "Primer cuatrimestre no aplica beca " + "[P] " + _prom + " [C] " + _cuatri;
+                return _beca;
+            case 2:
+            case 3:
+            case 4:
+                if((_prom >=7.0f) && (_prom <= 8.0f))
+                {
+                    _beca = "Beca 20% "  + "[P] " + _prom + " [C] " + _cuatri;
+                    return _beca;
+                }
+                else if((_prom >=8.1f) && (_prom <= 9.0f))
+                {
+                    _beca = "Beca 25% " + "[P] " + _prom + " [C] " + _cuatri;
+                    return _beca;
+                }
+                else if(_prom >=9.1f)
+                {
+                    _beca = "Beca 35% " + "[P] " + _prom + " [C] " + _cuatri;
+                    return _beca;
+                }
+                else
+                {
+                    _beca = "Alumno sin beca " + "[P] " + _prom + " [C] " + _cuatri;
+                    return _beca;
+                }
+            case 7:
+            case 8:
+            case 9:
+                if((_prom >=7.0f) && (_prom <= 8.4f))
+                {
+                    _beca = "Beca 30% "  + "[P] " + _prom + " [C] " + _cuatri;
+                    return _beca;
+                }
+                else if(_prom >=8.5f)
+                {
+                    _beca = "Beca 40% " + "[P] " + _prom + " [C] " + _cuatri;
+                    return _beca;
+                }
+                else
+                {
+                    _beca = "Alumno sin beca " + "[P] " + _prom + " [C] " + _cuatri;
+                    return _beca;
+                }
+            case 10:
+                _beca = "Beca 30% " + "[P] " + _prom + " [C] " + _cuatri;
+                return _beca;
+            default:
+                _beca = "Cuatrimestre invalido o Beca no disponible "  + "[P] " + _prom + " [C] " + _cuatri;
+                return _beca;
+        }  
+    }
+}

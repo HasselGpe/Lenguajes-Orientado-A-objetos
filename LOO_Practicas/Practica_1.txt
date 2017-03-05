@@ -1,0 +1,24 @@
+package practica1;
+import static java.lang.System.out;
+import java.util.Date;
+import java.util.Random;
+
+public class Practica1 {  
+        public String _fecha;
+        public float _aleatorio;
+    public static void main(String[] args) 
+    {
+        FechaActual();
+        GenerarAleatorio();
+    }
+    public static void FechaActual()
+    {
+        Date _fecha = new Date();
+        out.println("Fecha Actual: " + _fecha);
+    }
+    public static void GenerarAleatorio()
+    {
+        float _aleatorio = (float) (Math.random()*9+1);
+        out.println("Número: " + _aleatorio);
+    }
+}

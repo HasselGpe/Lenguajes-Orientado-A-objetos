@@ -1,0 +1,29 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Practica7
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<String> _lista = new List<string>();
+            char opc;
+            do
+            {
+                Console.WriteLine("Inserte un nombre: ");
+                _lista.Add(Console.ReadLine());
+                Console.WriteLine("Agregar otro?: ");
+                opc = Convert.ToChar(Console.ReadLine());
+            } while (opc == 's' || opc == 'S');
+            foreach (var i in _lista)
+            {
+                Console.WriteLine(i);
+            }
+            Console.ReadKey();
+        }
+    }
+}

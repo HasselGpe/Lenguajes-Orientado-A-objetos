@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Ejercicio1
+{
+    class Program
+    {
+        public static string _paterno, _materno, _nombre;
+        static void Main(string[] args)
+        {
+            ConcatenarNombre();
+            GenerarAleatorio();
+            Console.ReadKey();
+        }
+        public static void ConcatenarNombre()
+        {
+            Console.WriteLine("CUAL ES TU NOMBRE\t");
+            _A.paterno ="Miranda"
+            _A.materno ="Briseño"
+            _nombre = "Oscar"
+            Console.WriteLine("{0}\t", _A.paterno + _A.materno + _nombre);
+        }
+        public static void GenerarAleatorio()
+        {
+            Random r = new Random();
+            int numero = r.Next();
+            Console.WriteLine(numero);
+        }
+    }
+}

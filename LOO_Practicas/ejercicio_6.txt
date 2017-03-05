@@ -1,0 +1,41 @@
+package program;
+public class Program {
+
+    public static void main(String[] args) {
+        Tablas uno = new Tablas(12,4);
+        System.out.println("                                 ");
+        Tablas dos = new Tablas(35,6);
+        System.out.println("                                 ");
+        Tablas tres = new Tablas(101,13);
+        System.out.println("                                 ");
+        Tablas cuatro = new Tablas(11,5);
+    }
+    
+}
+
+class Tablas
+        {
+            public int _tabla;
+            public int _cant;
+            
+            public Tablas (int a, int b)
+            {
+                this._tabla=a;
+                this._cant=b;
+                
+                GenerarTabla(a,b);
+                
+            }
+            
+            public static void GenerarTabla (int a, int b)
+            {
+                for (int i = a; i<=a; i++)
+                {
+                    for (int j=1; j<=b;j++)
+                    {
+                        System.out.println(i + "*" + j + "=" + i*j);
+                        
+                    }
+                }
+            }
+        }

@@ -1,0 +1,33 @@
+package ej3;
+import static java.lang.System.out;
+public class Ejercicio3 {
+    public static void main(String[] args)
+    {
+        Calculos Obj1 = new Calculos();
+        int mayor = Calculos.CalcularMayor(4,5); 
+        out.println("Mayor: " + mayor);
+        double volumen = Calculos.CalcularVolumenCilindro(8,6);
+        out.println("Volumen del cilindro:" + volumen);
+    }
+}
+class Calculos
+{
+    public static int CalcularMayor(int n1, int n2)
+    {
+        if(n1 > n2)
+        {
+            int mayor = n1;
+            return mayor;
+        }
+        else
+        {
+            int mayor = n2;
+            return mayor;
+        }
+    }
+    public static double CalcularVolumenCilindro(double radio, double altura)
+    {
+        double volumen = 3.1416 * (radio*radio) * altura;
+        return volumen;
+    }
+}

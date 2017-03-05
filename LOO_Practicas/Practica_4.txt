@@ -1,0 +1,32 @@
+package practica4;
+
+import static java.lang.System.out;
+
+public class Practica4 {
+    public static void main(String[] args) {
+        Empleado uno = new Empleado("Pedro",21);
+        Empleado dos = new Empleado("Francisco",21,5);
+        Empleado tres = new Empleado("Raul",21,2);
+        Empleado cuatro = new Empleado("Carlos",21);
+    } 
+}
+class Empleado
+{
+    String _nombre;
+    Double _salario;
+    public Empleado(String nempleado, int dias)
+    {
+        int pagoxdia = 330;
+        int salario = dias * pagoxdia;
+        out.print("Empleado: " + nempleado);
+        out.println(" Salario: " + salario);
+    }
+    public Empleado(String nempleado, int trabajo, int notrabajo)
+    {
+        int pagoxdia = 330;
+        float pagofdia = 309.50f;
+        double salario = (trabajo * pagoxdia) - (notrabajo * pagofdia);
+        out.print("Empleado: " + nempleado);
+        out.println(" Salario: " + salario);
+    }
+}

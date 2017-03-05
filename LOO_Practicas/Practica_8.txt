@@ -1,0 +1,124 @@
+package practica8;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import static java.lang.System.*;
+import java.util.ArrayList;
+import java.util.*;
+public class Practica8 {
+    public static boolean _Agregar = true;
+    public static void main(String[] args) throws IOException {
+        List<String> LapTop = new ArrayList<>();
+        List<String> PC = new ArrayList<>();
+while(_Agregar)
+{
+    System.out.println("Agregar una Computadora?: ");
+    InputStreamReader EntradaRespuesta = new InputStreamReader(System.in); //Crea un flujo de lectura al pasarle el parámetro System.in
+    BufferedReader Respuesta = new BufferedReader(EntradaRespuesta); //Capturar datos
+    String res = Respuesta.readLine();//Lee el texto desde la consola
+    if("S".equals(res)|| "s".equals(res))
+    {
+        InputStreamReader EntradaDispositivo = new InputStreamReader(System.in); //Crea un flujo de lectura al pasarle el parámetro System.in
+        BufferedReader Elemento = new BufferedReader(EntradaDispositivo); //Capturar datos
+        //String cosa = Elemento.readLine();//Lee el texto desde la consola
+        System.out.println("Es un Portatil o de Escritorio?: ");
+        String tipo = Respuesta.readLine();
+        if(null!= tipo)
+        switch (tipo) {
+            case "E"://ESCRITORIO
+            case "e"://ESCRITORIO
+                System.out.println("¿Cuál es la marca? ");
+                String cosa1 = Elemento.readLine();
+                PC.add(cosa1);
+                System.out.println("¿Cuál es su Procesador? ");
+                String cosa2 = Elemento.readLine();
+                PC.add(cosa2);
+                System.out.println("¿Cuanta memoria tiene [GB]? ");
+                String cosa3 = Elemento.readLine();
+                PC.add(cosa3);
+                System.out.println("¿Cuál es su almacenamiento [HDD]? ");
+                String cosa4 = Elemento.readLine();
+                PC.add(cosa4);
+                System.out.println("¿Cuál es su estado? ");
+                String cosa5 = Elemento.readLine();
+                PC.add(cosa5);
+                break;
+            case "P"://PORTATIL
+            case "p"://PORTATIL
+System.out.println("¿Cuál es la marca? ");
+                String cosaA = Elemento.readLine();
+                PC.add(cosaA);
+                System.out.println("¿Cuál es su Procesador? ");
+                String cosaB = Elemento.readLine();
+                PC.add(cosaB);
+                System.out.println("¿Cuanta memoria tiene [GB]? ");
+                String cosaC = Elemento.readLine();
+                PC.add(cosaC);
+                System.out.println("¿Cuál es su almacenamiento [HDD]? ");
+                String cosaD = Elemento.readLine();
+                PC.add(cosaD);
+                System.out.println("¿Cuál es su estado? ");
+                String cosaE = Elemento.readLine();
+                PC.add(cosaE);
+                System.out.println("¿Cuál es la duración de la bateria? ");
+                String cosaF = Elemento.readLine();
+                PC.add(cosaF);
+                break;
+            default:
+                System.out.println("Opcion NO valida!");
+                break;
+        }
+    }
+    else if("N".equals(res)|| "n".equals(res))
+    {
+        Iterator <String> i = PC.iterator();
+        while (i.hasNext())
+            {
+                System.out.println (i.next());
+            }
+        _Agregar = false;
+    }
+    else
+    {
+        System.out.println("Opcion NO valida, Escoja S s o N n");
+    }
+
+}
+}
+}
+class Computador
+{
+    public String _marca;
+    public float _cpu;
+    public int _ram, _ssd;
+    boolean _statusVendido = false;
+    public Computador(String mrk, float upc, int memory, int storage)
+    {
+        this._marca=mrk;
+        this._cpu=upc;
+        this._ram=memory;
+        this._ssd=storage;
+    }
+    public void ImprimirDatos()
+    {
+        out.println("Marca: " + _marca);
+        out.println("CPU: " + _cpu);
+        out.println("RAM: " + _ram);
+        out.println("Almacenamiento: " + _ssd);
+    }
+}
+class Portatil extends Computador
+{
+    public int _horasBateria;
+    public Portatil(String mrk, float upc, int memory, int storage, int hrsbty)
+    {
+        super(mrk,upc,memory,storage);
+        this._horasBateria=hrsbty;
+    }
+    @Override
+    public void ImprimirDatos()
+    {
+        super.ImprimirDatos();
+        out.println("Bateria: " + _horasBateria);
+    }
+}
