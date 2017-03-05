@@ -1,0 +1,2 @@
+E:\9 Cuatrimestre\OOP\LOO_P3_OrtegaPelaez\LOO_P3_OrtegaPelaez\bin\Debug\LOO_P3_OrtegaPelaez.exe.config
+G:\9 Cuatrimestre\OOP\LOO_P3_OrtegaPelaez\LOO_P3_OrtegaPelaez\bin\Debug\LOO_P3_OrtegaPelaez.exe.config
